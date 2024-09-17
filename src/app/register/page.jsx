@@ -20,7 +20,7 @@ function RegisterPage() {
         }
 
         // Enviamos la peticion al backend
-        const res = await fetch(URI + "/register", {
+        const res = await fetch(URI + "/api/auth/register", {
             method: "POST",
             body: JSON.stringify({
                 name: data.username,
@@ -36,6 +36,7 @@ function RegisterPage() {
         if (res.ok) {
             router.push('/login');
         }
+        router.push('/login');
     });
 
     console.log(errors);
